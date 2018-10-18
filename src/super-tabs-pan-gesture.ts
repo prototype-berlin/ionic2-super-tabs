@@ -25,6 +25,8 @@ export class SuperTabsPanGesture {
 
   private listeners: Function[] = [];
 
+  private isTabNav: boolean;
+
   constructor(
     private plt: Platform,
     private el: HTMLElement,
@@ -32,11 +34,15 @@ export class SuperTabsPanGesture {
     private rnd: Renderer2
   ) {
 
-    this.listeners.push(
-      rnd.listen(el, 'touchstart', this._onStart.bind(this)),
-      rnd.listen(el, 'touchmove', this._onMove.bind(this)),
-      rnd.listen(el, 'touchend', this._onEnd.bind(this))
-    );
+    this.isTabNav = this.el.classList.contains('tab-buttons-container');
+    if (!this.isTabNav) {
+      this.listeners.push(
+        rnd.listen(el, 'touchstart', this._onStart.bind(this)),
+        rnd.listen(el, 'touchmove', this._onMove.bind(this)),
+        rnd.listen(el, 'touchend', this._onEnd.bind(this))
+      );
+    }
+
 
     if (config.sideMenu === 'both' || config.sideMenu === 'left') {
       this.leftThreshold = config.sideMenuThreshold;
