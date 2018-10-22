@@ -1,3 +1,8 @@
+# CAUTION!
+
+This fork only disables touch listeners for the super tabs toolbar to make smooth scrolling possible.
+Further neccessary adjustments like proper css styling and updating tabs scroll position are currently missing.
+
 # Swipeable Tabs for Ionic
 [![npm](https://img.shields.io/npm/l/ionic2-super-tabs.svg)](https://www.npmjs.com/package/ionic2-super-tabs/)
 [![npm](https://img.shields.io/npm/dt/ionic2-super-tabs.svg)](https://www.npmjs.com/package/ionic2-super-tabs)
