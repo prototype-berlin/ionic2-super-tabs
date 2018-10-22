@@ -10,9 +10,8 @@ var SuperTabsPanGesture = (function () {
         this.listeners = [];
         this.isTabNav = this.el.classList.contains('tab-buttons-container');
         if (!this.isTabNav) {
-            this.listeners.push(rnd.listen(el, 'touchmove', this._onMove.bind(this)));
+            this.listeners.push(rnd.listen(el, 'touchstart', this._onStart.bind(this)), rnd.listen(el, 'touchmove', this._onMove.bind(this)), rnd.listen(el, 'touchend', this._onEnd.bind(this)));
         }
-        this.listeners.push(rnd.listen(el, 'touchstart', this._onStart.bind(this)), rnd.listen(el, 'touchend', this._onEnd.bind(this)));
         if (config.sideMenu === 'both' || config.sideMenu === 'left') {
             this.leftThreshold = config.sideMenuThreshold;
         }

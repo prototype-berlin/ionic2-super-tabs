@@ -144,7 +144,6 @@ var SuperTabsContainer = (function () {
             var position = Math.max(_this.minPosX, Math.min(_this.maxPosX, tabIndex * _this.tabWidth));
             tabIndex = position / _this.tabWidth;
             // move container if we changed position
-            console.log('move container', position, _this.containerPosition, _this.container.nativeElement.getBoundingClientRect());
             if (position !== _this.containerPosition) {
                 _this.plt.raf(function () {
                     return _this.moveContainer(true, position)
